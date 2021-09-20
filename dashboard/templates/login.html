@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/style/dashboard_style.css" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Title</title>
+
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <br>
+        <div class="fadeIn first">
+            <h1>Login</h1>
+        </div>
+
+        <!-- Login Form -->
+        <form method="post">
+            {% csrf_token %}
+            {{ form.username }}<br>
+            {{ form.password }}
+            <br><br>
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+    </div>
+</div>
+{#{{ form }}#}
+{#<form method="post">#}
+{##}
+{#    <h1 style="text-align: center">Login</h1>#}
+{#    <div class="container">#}
+{#        <label for="uname"><b>Username</b></label>#}
+{#        {{ form.username }}#}
+{##}
+{#        <label for="psw"><b>Password</b></label>#}
+{#        {{ form.password }}#}
+{##}
+{#        <button type="submit">Login</button>#}
+{#    </div>#}
+{##}
+{##}
+{#</form>#}
+{#<form role="form" method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ form.username }}<br>#}
+{#    {{ form.password }}<br>#}
+{#    {% if msg %}#}
+{#        {{ msg }}<br>#}
+{#    {% endif %}#}
+{#    <button type="submit" name="login">Login</button>#}
+{#</form>#}
+</body>
+</html>
+
+
+<!------ Include the above in your HEAD tag ---------->
+

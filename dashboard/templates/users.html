@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+    <nav class="navbar navbar-default" style="background-color: #56baed;color: white">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Nitrx</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'dashboard' %}">Home</a></li>
+                <li><a href="{% url 'dashboard-logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+{% endif %}
+
+{#    <a href="">Home</a>#}
+{#    <a href="">Logout</a>#}
+{#{% endif %}#}
+<div class="container">
+
+    <h1>Users</h1>
+    <ul class="list-group">
+        {% for user,posts in total_users %}
+            <li class="list-group-item">{{ user.username }}-{{ posts }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>
