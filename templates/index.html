@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nitrx-Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/allstyles.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <header class="header">
+        <a href="{% url 'dashboard' %}" class="logo"><img src="{% static 'images/logo.svg' %}" height="" width="" alt="logo"></a>
+        <div class="dropdown profileDropdown">
+            <button class="btn" type="button" id="profileDrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="dpWrap"> <img src="{% static 'images/dp.svg' %}" height="" width="" alt="post img"></span>
+                <img src="{% static 'images/white-angle-down.svg' %}" height="" width="" alt="post img">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="profileDrop">
+                <a class="dropdown-item" href="{% url 'dashboard-logout' %}">Logout</a>
+            </div>
+        </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <script type="text/javascript " src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script src="{% static 'js/system.js' %}"></script>
+</body>
+
+</html>

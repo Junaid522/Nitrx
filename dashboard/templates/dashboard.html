@@ -1,0 +1,144 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="breadcrumb">
+            <ul>
+                <li><a href="#">Home /</a></li>
+                <li>Report</li>
+            </ul>
+        </div>
+        <div class="contentWrap">
+            <div class="headtitle">
+                <div class="multidropdowns">
+                    <div class="content">
+                        <p>Content Type</p>
+                        <div class="drop-down1">
+                            <div class="selected1">
+                                <a href="#"><span>Organic</span></a>
+                            </div>
+                            <div class="options1">
+                                <ul>
+                                    <li><a href="#">Organic</a></li>
+                                    <li><a href="#">Desktop</a></li>
+                                    <li><a href="#">Post</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="device">
+                        <p>Device</p>
+                        <div class="drop-down2">
+                            <div class="selected2">
+                                <a href="#"><span>Desktop</span></a>
+                            </div>
+                            <div class="options2">
+                                <ul>
+                                    <li><a href="#">Organic</a></li>
+                                    <li><a href="#">Desktop</a></li>
+                                    <li><a href="#">Post</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="format">
+                        <p>Format</p>
+                        <div class="drop-down3">
+                            <div class="selected3">
+                                <a href="#"><span>Post</span></a>
+                            </div>
+                            <div class="options3">
+                                <ul>
+                                    <li><a href="#">Organic</a></li>
+                                    <li><a href="#">Desktop</a></li>
+                                    <li><a href="#">Post</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="daterange">
+                    <a class="date" href="#">Date Range</a>
+                    <input type="date" name="dateofbirth" id="dateofbirth">
+                </div>
+            </div>
+            <div class="multicards" id="id_legends">
+                <div class="impressions blue">
+                    <img class="close" src="{% static 'images/Iconclose.png' %}" width="" height="" alt="close"/>
+                    <h5>IMPRESSIONS</h5>
+                    <div class="rate">
+                        <h1>67k</h1>
+                        <h6>57.6%</h6>
+                    </div>
+                </div>
+                <div class="impressions green">
+                    <img class="close" src="{% static 'images/Iconclose.png' %}" width="" height="" alt="close"/>
+                    <h5>IMPRESSIONS</h5>
+                    <div class="rate">
+                        <h1>67k</h1>
+                        <h6>57.6%</h6>
+                    </div>
+                </div>
+                <div class="impressions yellow">
+                    <img class="close" src="{% static 'images/Iconclose.png' %}" width="" height="" alt="close"/>
+                    <h5>IMPRESSIONS</h5>
+                    <div class="rate">
+                        <h1>67k</h1>
+                        <h6>57.6%</h6>
+                    </div>
+                </div>
+                <div class="impressions red">
+                    <img class="close" src="{% static 'images/Iconclose.png' %}" width="" height="" alt="close"/>
+                    <h5>IMPRESSIONS</h5>
+                    <div class="rate">
+                        <h1>67k</h1>
+                        <h6>57.6%</h6>
+                    </div>
+                </div>
+                <div class="impressions ">
+                    <img class="close" src="{% static 'images/Iconclose.png' %}" width="" height="" alt="close"/>
+                    <h5>IMPRESSIONS</h5>
+                    <div class="rate">
+                        <h1>67k</h1>
+                        <h6>57.6%</h6>
+                    </div>
+                </div>
+                <div class="impressions ">
+                    <img class="close" src="{% static 'images/Iconclose.png' %}" width="" height="" alt="close"/>
+                    <h5>IMPRESSIONS</h5>
+                    <div class="rate">
+                        <h1>67k</h1>
+                        <h6>57.6%</h6>
+                    </div>
+                </div>
+            </div>
+            <div id="graph1"></div>
+            <div class="postFlex">
+                {% for post in posts %}
+                    <div class="postBox">
+                        <div class="imgWrap">
+                            <img src="{{ post.post_media }}" height="" width="" alt="post img">
+                            <h5>{{ post.title }}</h5>
+                        </div>
+                        <div class="postFig">
+                            <h6>Total Impressions</h6>
+                            <p>{{ post.impressions }}</p>
+                        </div>
+                        <div class="postFig">
+                            <h6>Total Audience</h6>
+                            <p>{{ post.total_audience }}</p>
+                        </div>
+                        <div class="postFig">
+                            <h6>Total Engagement</h6>
+                            <p>{{ post.engaged_audience }}(3.9%)</p>
+                        </div>
+                        <div class="postFig">
+                            <h6>Engaged Audience</h6>
+                            <p>{{ post.engaged_audience }} (3.9%)</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
